@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/animal_nav"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.luizcarlos.animalscomplete.view.fragments.ListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.luizcarlos.animalscomplete.view.fragments.DetailFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/actionList"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="animal"
+            app:argType="com.luizcarlos.animalscomplete.model.Animal" />
+    </fragment>
+</navigation>
